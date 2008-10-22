@@ -51,7 +51,7 @@ install lib/libwrapper.so $RPM_BUILD_ROOT%{_libdir}/%{name}/libwrapper.so
 
 # jars
 cp -a lib/wrapper.jar $RPM_BUILD_ROOT%{_javadir}/%{name}-%{version}.jar
-ln -s wrapper-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/%{name}.jar
+ln -s %{name}-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/%{name}.jar
 
 %clean
 rm -rf $RPM_BUILD_ROOT
