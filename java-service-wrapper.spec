@@ -44,7 +44,7 @@ export JAVA_HOME="%{java_home}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_libdir}/%{name},%{_javadir},%{_sysconfdir}/%{name},%{_sbindir}}
+install -d $RPM_BUILD_ROOT{%{_libdir}/%{name},%{_javadir},%{_sysconfdir}/%{name},%{_sbindir},%{_libdir}/%{name}}
 
 install bin/wrapper $RPM_BUILD_ROOT%{_sbindir}/%{name}
 install lib/libwrapper.so $RPM_BUILD_ROOT%{_libdir}/%{name}/libwrapper.so
@@ -61,5 +61,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_sbindir}/%{name}
 %{_javadir}/%{name}.jar
 %{_javadir}/%{name}-%{version}.jar
+%dir %{_libdir}/%{name}
 %{_libdir}/%{name}/libwrapper.so
 %doc doc/* conf/wrapper.conf
