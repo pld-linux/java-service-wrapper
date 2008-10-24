@@ -1,7 +1,6 @@
 #
 # TODO:
 # - Is it possible to build it for other archs?
-# - BRs
 
 %define ver 3.3.2
 %define ver_patch b
@@ -16,6 +15,9 @@ Group:		Development/Languages/Java
 Source0:	http://wrapper.tanukisoftware.org/download/%{ver}-%{ver_patch}/wrapper_%{ver}-%{ver_patch}_src.tar.gz
 # Source0-md5:	20529639806b9ccba33281152073e3cb
 URL:		http://wrapper.tanukisoftware.org/
+BuildRequires:	ant
+BuildRequires:	ant-nodeps
+BuildRequires:	ant-junit
 BuildRequires:	jpackage-utils
 BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
