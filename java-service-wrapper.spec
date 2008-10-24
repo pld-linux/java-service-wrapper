@@ -3,18 +3,15 @@
 # - Is it possible to build it for other archs?
 # - BRs
 
-%define ver 3.3.2
-%define ver_patch b
-
 %include	/usr/lib/rpm/macros.java
 Summary:	Java Service Wrapper
 Name:		java-service-wrapper
-Version:	%{ver}_%{ver_patch}
+Version:	3.2.3
 Release:	0.1
 License:	GPL v2
 Group:		Development/Languages/Java
-Source0:	http://wrapper.tanukisoftware.org/download/%{ver}-%{ver_patch}/wrapper_%{ver}-%{ver_patch}_src.tar.gz
-# Source0-md5:	20529639806b9ccba33281152073e3cb
+Source0:	http://wrapper.tanukisoftware.org/download/%{version}/wrapper_%{version}_src.tar.gz
+# Source0-md5:	1b5eb59f223a58d3b385d555e9cf33fa
 URL:		http://wrapper.tanukisoftware.org/
 BuildRequires:	jpackage-utils
 BuildRequires:	rpm-javaprov
@@ -35,7 +32,11 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Java Service Wrapper helps to run java daemon as System V services.
 
 %prep
-%setup -q -n wrapper_%{ver}-%{ver_patch}_src
+%setup -q -n wrapper_%{version}_src
+
+sed -i 's/gcc/gcc -lm/1' src/c/Makefile-linux-x86-32
+sed -i 's/gcc/gcc -lm/1' src/c/Makefile-linux-x86-64
+# sed -i 's/gcc/gcc -lm/1' src/c/Makefile-linux-ppc
 
 %build
 export JAVA_HOME="%{java_home}"
@@ -62,5 +63,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_javadir}/%{name}.jar
 %{_javadir}/%{name}-%{version}.jar
 %dir %{_libdir}/%{name}
-%{_libdir}/%{name}/libwrapper.so
+%attr(755,root,root) %{_libdir}/%{name}/libwrapper.so
 %doc doc/* conf/wrapper.conf
