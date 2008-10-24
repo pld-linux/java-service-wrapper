@@ -62,5 +62,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_javadir}/%{name}.jar
 %{_javadir}/%{name}-%{version}.jar
 %dir %{_libdir}/%{name}
-%{_libdir}/%{name}/libwrapper.so
+%attr(755,root,root) %{_libdir}/%{name}/libwrapper.so
 %doc doc/* conf/wrapper.conf
