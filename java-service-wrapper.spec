@@ -1,7 +1,6 @@
 #
 # TODO:
 # - Is it possible to build it for other archs?
-# - BRs
 
 %include	/usr/lib/rpm/macros.java
 Summary:	Java Service Wrapper
@@ -13,9 +12,13 @@ Group:		Development/Languages/Java
 Source0:	http://wrapper.tanukisoftware.org/download/%{version}/wrapper_%{version}_src.tar.gz
 # Source0-md5:	1b5eb59f223a58d3b385d555e9cf33fa
 URL:		http://wrapper.tanukisoftware.org/
+BuildRequires:	ant
+BuildRequires:	ant-junit
+BuildRequires:	ant-nodeps
 BuildRequires:	jpackage-utils
 BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
+BuildRequires:	sed >= 4.0
 Requires:	jpackage-utils
 ExclusiveArch:	%{ix86} %{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
