@@ -11,7 +11,7 @@ Name:		java-service-wrapper
 Version:	%{ver}_%{ver_patch}
 Release:	0.1
 License:	GPL v2
-Group:		Development/Languages/Java
+Group:		Libraries/Java
 Source0:	http://wrapper.tanukisoftware.org/download/%{ver}-%{ver_patch}/wrapper_%{ver}-%{ver_patch}_src.tar.gz
 # Source0-md5:	20529639806b9ccba33281152073e3cb
 URL:		http://wrapper.tanukisoftware.org/
