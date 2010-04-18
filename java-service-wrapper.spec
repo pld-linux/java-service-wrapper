@@ -16,8 +16,8 @@ Source0:	http://wrapper.tanukisoftware.org/download/%{ver}-%{ver_patch}/wrapper_
 # Source0-md5:	20529639806b9ccba33281152073e3cb
 URL:		http://wrapper.tanukisoftware.org/
 BuildRequires:	ant
-BuildRequires:	ant-nodeps
 BuildRequires:	ant-junit
+BuildRequires:	ant-nodeps
 BuildRequires:	jpackage-utils
 BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
