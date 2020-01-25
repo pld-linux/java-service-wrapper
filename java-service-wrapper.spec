@@ -5,7 +5,6 @@
 %define ver 3.3.2
 %define ver_patch b
 
-%include	/usr/lib/rpm/macros.java
 Summary:	Java Service Wrapper
 Name:		java-service-wrapper
 Version:	%{ver}_%{ver_patch}
